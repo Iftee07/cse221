@@ -31,11 +31,10 @@ public class advising {
                 }
             }
             int count = 0;
-            ArrayList<Integer> output = new ArrayList<>();
+            int[] output = new int[n];
             while (!q.isEmpty()) {
                 Integer f = q.remove();
-                output.add(f);
-                count++;
+                output[count++] = f;
 
                 for (int neighbor : graph[f]) {
                     inDegree[neighbor]--;
@@ -46,15 +45,15 @@ public class advising {
 
             }
             if (count == n) {
+                StringBuilder sb = new StringBuilder();
                 for (int num : output) {
-                    pw.print(num + " ");
+                    sb.append(num + " ");
                 }
-                pw.println();
+                pw.println(sb);
             } else {
                 pw.println(-1);
             }
         }
-        pw.flush();
-
+        pw.close();
     }
 }
