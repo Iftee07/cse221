@@ -45,7 +45,16 @@ public class advising {
                 }
 
             }
+            if (count == n) {
+                for (int num : output) {
+                    pw.print(num + " ");
+                }
+                pw.println();
+            } else {
+                pw.println(-1);
+            }
         }
+        pw.flush();
 
     }
 }
